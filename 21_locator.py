@@ -1,14 +1,14 @@
-from cmath import log
+#!/usr/bin/python3
+
 import socket
 import time
 import sys
 import os
 
-try:
-	import requests
-except ImportError:
-	print("Python \"requests\" module is missing!")
-	sys.exit()
+# try:
+# 	import requests
+# except ImportError:
+# 	sys.exit()
 
 
 hostname = ' '.join(socket.gethostname().split(".")[:2])
