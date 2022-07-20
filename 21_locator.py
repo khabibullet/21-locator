@@ -4,6 +4,7 @@ import socket
 import time
 import getpass
 from slack_sdk import WebClient
+import ssl
 
 hostname = ' '.join(socket.gethostname().split(".")[:2])
 username = getpass.getuser()
@@ -19,6 +20,6 @@ with open('identity', 'r') as file:
 	slack_token, user_id = file.read().splitlines()
 	file.close()
 
-print(slack_token)
-# client = WebClient(token=slack_token)
-# response = client.users_profile_set(user=user_id, profile=json)
+ssl._create_default_https_context = ssl._create_unverified_context
+client = WebClient(token=slack_token)
+response = client.users_profile_set(user=user_id, profile=json)
