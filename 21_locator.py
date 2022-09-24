@@ -22,4 +22,4 @@ with open('identity', 'r') as file:
 
 ssl._create_default_https_context = ssl._create_unverified_context
 client = WebClient(token=slack_token)
-response = client.users_profile_set(user=user_id, profile=json)
+response = client.users_profile_set(user="U02GUPRTBFB", profile=json)
